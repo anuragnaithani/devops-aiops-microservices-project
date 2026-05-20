@@ -4,157 +4,151 @@
 
 ---
 
-## Welcome
+# Screenshots
 
-Hey everyone!
+## Docker & Local Setup
 
-Welcome to my DevOps + AI series where we build an end-to-end DevOps project with an AIOps integration.
+### Docker Containers Running
 
-A lot of you have been asking: *"when are you going to share a full DevOps project?"*
+![Docker Containers](screenshots/1-docker-containers-running.png)
 
-Well — here we are.
+### Local Frontend Running
 
-In this series we will:
+![Frontend](screenshots/2-local-frontend-running.png)
 
-- Build microservices locally
-- Use Claude and AI tools to assist development
-- Deploy everything step by step
-- Migrate the system to the cloud on AWS EKS
-- Set up a full CI/CD pipeline with GitHub Actions
-- Implement GitOps workflows with ArgoCD
-- Integrate AIOps capabilities with AWS Bedrock
+### Prometheus Monitoring
 
-By the end of this series, you won't just know tools — you'll understand how real DevOps systems are designed and deployed.
+![Prometheus](screenshots/3-prometheus-monitoring.png)
+
+### Grafana Dashboard
+
+![Grafana](screenshots/4-grafana-dashboard.png)
 
 ---
 
-## Repository Structure
+## Project Structure
 
-```
-DevOps-Practice-Guide/
-├── docs/
-│   ├── part1-system-design.md     # System design foundations (Part 1)
-│   ├── part2-workflow.md          # Full workflow with AIOps (Part 2)
-│   └── claude-setup.md            # Claude Code + MCP server setup
-├── projects/
-│   ├── README.md                  # EKS deployment guide (Part 3)
-│   ├── boutique-microservices/    # The application (7 services)
-│   ├── Infrastructure/            # Terraform for AWS provisioning
-│   └── aiops-assistant/           # Bedrock Agent — Kira (Part 4)
-├── gitops/
-│   ├── argo-cd.yml                # ArgoCD Application manifest
-│   ├── kustomization.yml          # Kustomize entry point
-│   └── k8s/                       # All Kubernetes manifests
-└── .github/
-    └── workflows/ci.yml           # GitHub Actions CI pipeline
-```
+### Project Folder Structure
+
+![Project Structure](screenshots/5-project-structure.png)
+
+### Docker Compose Configuration
+
+![Docker Compose](screenshots/6-docker-compose-config.png)
+
+### Docker Build Success
+
+![Docker Build](screenshots/7-docker-build-success.png)
 
 ---
 
-## Series Structure
+## GitHub & AWS ECR
 
-### Claude Setup — AI Assistant Configuration
-[`docs/claude-setup.md`](docs/claude-setup.md)
+### GitHub Repository
 
-Before jumping into the project, this step walks through how Claude Code is configured as the AI assistant throughout this series.
+![GitHub Repo](screenshots/8-github-repository.png)
 
-Three things are set up:
+### AWS ECR Repositories
 
-**CLAUDE.md** — a project instruction file at the repo root that Claude reads automatically at the start of every session. It puts Claude in safe execution mode: explain what you're about to do and why before taking any action. This is important when working with live AWS infrastructure where silent commands can have real consequences.
+![ECR](screenshots/9-ecr-repositories.png)
 
-**MCP Servers** — background processes that extend Claude's built-in capabilities. Four servers are configured in `~/.claude/settings.json`:
+### Docker Image Push Success
 
-| Server | What it unlocks |
-|--------|----------------|
-| `awslabs.eks-mcp-server` | Query EKS clusters, inspect pods, stream logs, apply manifests |
-| `awslabs.terraform-mcp-server` | Run Terraform commands, search provider docs, run Checkov scans |
-| `awslabs.aws-pricing-mcp-server` | Live AWS pricing lookups and cost analysis reports |
-| `awslabs.core-mcp-server` | MCP orchestration layer (deprecated, kept for compatibility) |
-
-**Skills** — domain-specific knowledge packs that improve how Claude reasons about certain topics. The `terraform-skill` is installed, giving Claude deeper context for Terraform module patterns, testing strategies, security scanning, and CI/CD workflows specific to infrastructure-as-code.
+![Docker Push](screenshots/10-ecr-image-push-success.png)
 
 ---
 
-### Part 1 — System Design Foundations
-[`docs/part1-system-design.md`](docs/part1-system-design.md)
+## Terraform + AWS EKS
 
-We start with system design concepts specifically for cloud and DevOps. This is important whether you're a beginner, intermediate, or senior engineer — because companies don't choose tools randomly. They think about architecture patterns, deployment strategies, scalability, reliability, and cost tradeoffs.
+### Terraform Apply Success
 
-We cover 12 core system design pillars used in modern DevOps architectures, and connect each one directly to something running in this project.
+![Terraform](screenshots/11-terraform-eks-success.png)
 
----
+### EKS Cluster Running
 
-### Part 2 — Understanding the Workflow
-[`docs/part2-workflow.md`](docs/part2-workflow.md)
+![EKS Cluster](screenshots/12-eks-cluster-running.png)
 
-Before writing any code or deployment configs, you need to understand how the entire system flows:
+### Kubernetes Pods Running
 
-- What services we're building and how they communicate
-- How the pipeline works
-- How code moves from developer → CI → deployment → production → AIOps
+![Pods](screenshots/13-eks-all-pods-running.png)
 
-This is where the full picture comes together — including how AI fits into the workflow.
+### Boutique Namespace Pods
 
----
+![Boutique Pods](screenshots/14-boutique-pods-running.png)
 
-### Part 3 — DevOps Project Implementation
-[`projects/README.md`](projects/README.md)
+### Kubernetes Services
 
-Then we actually build the project. You'll see:
-
-- Docker containers and Docker Compose
-- Kubernetes deployments on EKS
-- CI/CD pipelines with GitHub Actions
-- GitOps automation with ArgoCD
-- Infrastructure provisioning with Terraform
-- Observability with Prometheus and Grafana
+![Services](screenshots/15-kubernetes-services.png)
 
 ---
 
-### Part 4 — AIOps Integration
-[`projects/aiops-assistant/README.md`](projects/aiops-assistant/README.md)
+## ArgoCD + GitOps
 
-Finally, we explore how AI helps with:
+### ArgoCD Dashboard
 
-- Monitoring and anomaly detection
-- Log analysis at scale
-- Incident response automation
-- DevOps troubleshooting
+![ArgoCD](screenshots/16-argocd-dashboard.png)
 
-Because modern DevOps is no longer just automation — it's **automation + intelligence**.
+### GitOps Sync Success
 
----
+![GitOps Sync](screenshots/17-argocd-sync-success.png)
 
-## Bonus Challenge
+### ArgoCD Application Graph
 
-You'll get access to this entire repository.
-
-But there's a catch.
-
-The repository includes **intentional issues and troubleshooting tasks**.
-
-Why? Because AI has made things easier. But if you want to grow as an engineer, you must learn how to break systems, debug systems, and fix systems.
-
-Once you implement the project:
-
-1. Fork the repository
-2. Deploy the system
-3. Troubleshoot the issues
-4. Share what you learned — and tag me so I know you're building along
+![Application Graph](screenshots/18-argocd-application-graph.png)
 
 ---
 
-## Tech Stack
+## Monitoring on EKS
 
-| Layer | Technology |
-|-------|-----------|
-| Application | React, Node.js, PostgreSQL |
-| Containers | Docker, Docker Compose |
-| Orchestration | Kubernetes (AWS EKS) |
-| Infrastructure | Terraform |
-| CI/CD | GitHub Actions |
-| GitOps | ArgoCD + Kustomize |
-| Monitoring | Prometheus + Grafana |
-| Log Forwarding | AWS Fluent Bit → CloudWatch |
-| AIOps | AWS Bedrock Agent (Kira) |
-| AI Assistant | Claude Code + MCP Servers |
+### Grafana Monitoring on EKS
+
+![Grafana EKS](screenshots/19-eks-grafana-monitoring.png)
+
+### Frontend Running on EKS
+
+![Frontend EKS](screenshots/20-frontend-running-on-eks.png)
+
+---
+
+## Architecture Diagram
+
+### Complete DevOps + AIOps Architecture
+
+![Architecture](screenshots/21-project-architecture.png)
+
+---
+
+# Tech Stack
+
+| Layer          | Technology                 |
+| -------------- | -------------------------- |
+| Application    | React, Node.js, PostgreSQL |
+| Containers     | Docker, Docker Compose     |
+| Orchestration  | Kubernetes (AWS EKS)       |
+| Infrastructure | Terraform                  |
+| CI/CD          | GitHub Actions             |
+| GitOps         | ArgoCD + Kustomize         |
+| Monitoring     | Prometheus + Grafana       |
+| AIOps          | AWS Bedrock Agent          |
+| AI Assistant   | Claude Code + MCP Servers  |
+
+---
+
+# Key Features
+
+* End-to-End DevOps Workflow
+* Microservices Architecture
+* Kubernetes Deployment on AWS EKS
+* GitOps Automation using ArgoCD
+* Infrastructure as Code using Terraform
+* Monitoring using Prometheus & Grafana
+* Dockerized Services
+* AWS ECR Integration
+* CI/CD Pipeline Ready
+* Real-world Troubleshooting & Debugging
+
+---
+
+# Project Status
+
+✅ Completed Successfully
