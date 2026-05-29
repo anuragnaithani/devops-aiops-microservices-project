@@ -74,7 +74,7 @@ Application URL:
 http://localhost:3000
 ```
 
-![Frontend](screenshots/2-local-frontend-running.png)
+![Frontend](screenshots/2-frontend-working.png)
 
 ---
 
@@ -88,7 +88,7 @@ Query used:
 up
 ```
 
-![Prometheus](screenshots/3-prometheus-monitoring.png)
+![Prometheus](screenshots/3-prometheus-services-up.png)
 
 ---
 
@@ -106,15 +106,11 @@ Grafana visualized Prometheus metrics using dashboards and graphs.
 
 The repository was organized into infrastructure, Kubernetes, monitoring, and microservices folders.
 
-![Project Structure](screenshots/5-project-structure.png)
-
 ---
 
 ### Docker Compose Configuration
 
 Docker Compose managed all local services, networking, and volumes.
-
-![Docker Compose](screenshots/6-docker-compose-config.png)
 
 ---
 
@@ -122,17 +118,9 @@ Docker Compose managed all local services, networking, and volumes.
 
 Docker images were successfully built for all services.
 
-![Docker Build](screenshots/7-docker-build-success.png)
-
 ---
 
-# GitHub & AWS ECR
-
-### GitHub Repository
-
-The complete source code, infrastructure, and GitOps manifests were stored in GitHub.
-
-![GitHub Repo](screenshots/8-github-repository.png)
+# AWS ECR
 
 ---
 
@@ -154,7 +142,7 @@ docker tag
 docker push
 ```
 
-![Docker Push](screenshots/10-ecr-image-push-success.png)
+![Docker Push](screenshots/1-docker-containers-running.png)
 
 ---
 
@@ -176,9 +164,6 @@ Resources created:
 ```bash
 terraform apply
 ```
-
-![Terraform](screenshots/11-terraform-eks-success.png)
-
 ---
 
 ### EKS Cluster Running
@@ -219,8 +204,6 @@ Kubernetes Services provided stable communication between microservices.
 
 ArgoCD implemented GitOps workflows for Kubernetes deployments.
 
-![ArgoCD](screenshots/16-argocd-dashboard.png)
-
 ---
 
 ### GitOps Sync Success
@@ -233,7 +216,7 @@ Features enabled:
 * Self Heal
 * Auto Namespace Creation
 
-![GitOps Sync](screenshots/17-argocd-sync-success.png)
+![GitOps Sync](screenshots/16-argocd-dashboard.png)
 
 ---
 
@@ -251,7 +234,7 @@ The application graph visualized deployments, services, pods, and secrets.
 
 Grafana monitored Kubernetes nodes, pods, and services.
 
-![Grafana EKS](screenshots/19-eks-grafana-monitoring.png)
+![Grafana EKS](screenshots/5-grafana-microservices-dashboard.png)
 
 ---
 
@@ -284,9 +267,6 @@ Prometheus → Grafana
 GitOps:
 GitHub → ArgoCD → EKS
 ```
-
-![Architecture](screenshots/21-project-architecture.png)
-
 ---
 
 # Tech Stack
