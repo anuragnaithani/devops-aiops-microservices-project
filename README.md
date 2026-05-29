@@ -216,16 +216,11 @@ Features enabled:
 * Self Heal
 * Auto Namespace Creation
 
-![GitOps Sync](screenshots/16-argocd-dashboard.png)
-
----
-
 ### ArgoCD Application Graph
 
 The application graph visualized deployments, services, pods, and secrets.
 
-![Application Graph](screenshots/18-argocd-application-graph.png)
-
+![GitOps Sync](screenshots/16-argocd-dashboard.png)
 ---
 
 # Monitoring on EKS
