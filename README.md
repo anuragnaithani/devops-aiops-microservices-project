@@ -96,7 +96,7 @@ up
 
 Grafana visualized Prometheus metrics using dashboards and graphs.
 
-![Grafana](screenshots/4-grafana-dashboard.png)
+![Grafana](screenshots/4-grafana-home.png)
 
 ---
 
